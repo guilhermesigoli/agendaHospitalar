@@ -17,7 +17,6 @@ var RegisterComponent = /** @class */ (function () {
         this.registerService = registerService;
         this.isLoggedIn = new core_1.EventEmitter();
         this.registerForm = null;
-        this.showError = false;
         this.appName = environment_1.environment.appName;
         this.isLoading = false;
         this.registerForm = this.formBuilder.group({
@@ -41,12 +40,13 @@ var RegisterComponent = /** @class */ (function () {
         this.registerService.find(this.registerForm.get('cpf').value).subscribe(function (response) {
             if (response.length === 0) {
                 _this.registerService.register(_this.registerForm.value).subscribe(function (res) {
+                    alert('Registrado com sucesso');
                     _this.isLoggedIn.emit();
                     _this.router.navigate(['/']);
                 });
             }
             else {
-                _this.showError = true;
+                alert('Erro ao cadastrar usuário, cpf já em uso');
             }
         }).add(function () {
             _this.isLoading = false;

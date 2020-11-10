@@ -15,7 +15,6 @@ export class RegisterComponent implements OnInit {
   appName: string;
   isLoading: boolean;
   registerForm: FormGroup = null;
-  showError = false;
 
   constructor(
     private readonly formBuilder: FormBuilder,
@@ -49,12 +48,13 @@ export class RegisterComponent implements OnInit {
           if(response.length === 0){
             this.registerService.register(this.registerForm.value).subscribe(
               res => {
+                alert('Registrado com sucesso')
                 this.isLoggedIn.emit();
                 this.router.navigate(['/']);
               }
             )
           } else {
-            this.showError = true;
+            alert('Erro ao cadastrar usuário, cpf já em uso')
           }
         }).add(() => {
           this.isLoading = false;
