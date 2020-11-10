@@ -7,16 +7,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.AppRoutingModule = void 0;
+var login_component_1 = require("./views/login/login.component");
+var register_component_1 = require("./views/register/register.component");
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var routes = [
     {
         path: 'login',
-        loadChildren: function () { return Promise.resolve().then(function () { return require('./views/login/login.module'); }).then(function (l) { return l.LoginModule; }); }
+        component: login_component_1.LoginComponent
     },
     {
         path: 'register',
-        loadChildren: function () { return Promise.resolve().then(function () { return require('./views/register/register.module'); }).then(function (r) { return r.RegisterModule; }); }
+        component: register_component_1.RegisterComponent
+    },
+    {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
     }
 ];
 var AppRoutingModule = /** @class */ (function () {

@@ -1,8 +1,3 @@
 {
-    "users": [
-        {
-            "username": "gui.sigoli@hotmail.com",
-            "password": "teste123"
-        }
-    ]
+  "users": []
 }
