@@ -1,21 +1,20 @@
+import { RegisterComponent } from './register.component';
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './login.component';
-import { LoginRoutingModule } from './login-routing.module';
-import { LoginService } from './login.service';
 
 @NgModule({
     imports: [
         FormsModule,
         ReactiveFormsModule,
-        LoginRoutingModule,
         HttpClientModule,
         CommonModule,
+        RouterModule
     ],
     exports: [],
-    declarations: [LoginComponent],
-    providers: [LoginService],
+    declarations: [RegisterComponent],
+    providers: [],
 })
-export class LoginModule { }
+export class RegisterModule { }

@@ -1,6 +1,8 @@
+import { LoginService } from './login.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,9 +15,12 @@ export class LoginComponent implements OnInit {
   appName: string;
   isLoading: boolean;
   loginForm: FormGroup = null;
+  showError = false;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private readonly formBuilder: FormBuilder,
+    private readonly loginService: LoginService,
+    private readonly router: Router
   ) {
     this.appName = environment.appName;
     this.isLoading = false;
@@ -30,24 +35,21 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    // if (!this.loginForm.valid) {
-    //   this.formValidator();
-    //   return;
-    // }
-    // this.isLoading = true;
-    // this.loginService.login(this.loginForm.value).subscribe(
-    //   response => {
-    //     sessionStorage.setItem('username', response.employee.username);
-    //     this.authService.initSession(response.token);
-    //     this.isLoggedIn.emit();
-    //     this.router.navigate(['/']);
-    //   },
-    //   (httpError: HttpErrorResponse) => {
-    //     this.errorService.setError(ErrorMap.get(httpError.error.errorCode));
-
-    //   }).add(() => {
-    //     this.isLoading = false;
-    //   });
+    if (!this.loginForm.valid) {
+      this.formValidator();
+      return;
+    }
+    this.isLoading = true;
+    this.loginService.login(this.loginForm.value).subscribe(
+      (response: []) => {
+        if(response.length === 0){
+          this.showError = true;
+        }
+        this.isLoggedIn.emit();
+        this.router.navigate(['/']);
+      }).add(() => {
+        this.isLoading = false;
+      });
   }
 
   formValidator() {

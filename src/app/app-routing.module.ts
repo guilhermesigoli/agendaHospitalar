@@ -7,9 +7,8 @@ const routes: Routes = [
     loadChildren: () => import('./views/login/login.module').then(l => l.LoginModule)
   },
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
+    path: 'register',
+    loadChildren: () => import('./views/register/register.module').then(r => r.RegisterModule)
   }
 ];
 

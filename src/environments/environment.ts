@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  appName: 'My Doc'
+  appName: 'My Doc',
+  baseUrl: ' http://localhost:3000'
 };
 
 /*
