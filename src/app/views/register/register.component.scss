@@ -1,0 +1,116 @@
+@import 'src/styles/styles.scss';
+
+.login-content {
+  background-image: url(../../../assets/hospital.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: bottom;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100vw;
+  padding: 100px 0px;
+
+  .app-title {
+    background-color: $primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 420px;
+    height: 128px;
+    border-radius: 4px 4px 0px 0px;
+
+    p {
+      width: 150px;
+      height: 43px;
+
+      font-family: Rubik;
+      font-size: 36px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+
+  form {
+    background-color: #121212;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 420px;
+
+    p {
+      font-size: 16px;
+      font-weight: 500;
+
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .form-content {
+      display: flex;
+      flex-direction: column;
+
+      min-width: 320px;
+      min-height: 251px;
+      margin: 70px 50px;
+
+      .btn-primary {
+        background-color: $primary-color;
+        border-color: $primary-color;
+
+        height: 40px;
+
+        font-size: 16px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        margin-top: 10px;
+      }
+
+
+      .input-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+      .form-group {
+        ::placeholder {
+          font-size: 16px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  p.link {
+    color: white;
+    text-align: center;
+    margin: 20px 10px;
+    cursor: pointer;
+  }
+}

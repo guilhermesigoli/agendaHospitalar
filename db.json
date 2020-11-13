@@ -1,0 +1,63 @@
+{
+  "users": [
+    {
+      "username": "admin@baplays.com",
+      "password": "teste123",
+      "name": "837487",
+      "cpf": "38478743",
+      "address": "84y384y",
+      "phone": "38y74834",
+      "id": 1
+    }
+  ], 
+  "doctors": [
+    {
+      "id": 1,
+      "name": "Guilherme Sigoli",
+      "specialty": "Dermatologista",
+      "address": "tatatatatatattata",
+      "phone": "84738483784",
+      "CRM": "834834783"
+    },
+    {
+      "id": 1,
+      "name": "Guilherme Sigoli",
+      "specialty": "Dermatologista",
+      "address": "tatatatatatattata",
+      "phone": "84738483784",
+      "CRM": "834834783"
+    },
+    {
+      "id": 1,
+      "name": "Guilherme Sigoli",
+      "specialty": "Dermatologista",
+      "address": "tatatatatatattata",
+      "phone": "84738483784",
+      "CRM": "834834783"
+    },
+    {
+      "id": 1,
+      "name": "Guilherme Sigoli",
+      "specialty": "Dermatologista",
+      "address": "tatatatatatattata",
+      "phone": "84738483784",
+      "CRM": "834834783"
+    },
+    {
+      "id": 1,
+      "name": "Guilherme Sigoli",
+      "specialty": "Dermatologista",
+      "address": "tatatatatatattata",
+      "phone": "84738483784",
+      "CRM": "834834783"
+    },
+    {
+      "id": 1,
+      "name": "Guilherme Sigoli",
+      "specialty": "Dermatologista",
+      "address": "tatatatatatattata",
+      "phone": "84738483784",
+      "CRM": "834834783"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+<div class="login-content">
+  <div>
+    <div class="app-title">
+      <p> {{ appName }} </p>
+    </div>
+    <form class="login-form" [formGroup]="registerForm" (ngSubmit)="register()">
+      <div class="form-content">
+        <div class="input-content">
+          <div class="form-group">
+            <input placeholder="CPF" type="text" class="form-control" formControlName="cpf" maxlength="11"
+              [ngClass]="{'is-invalid': fieldValidator('cpf')}">
+            <div class="invalid-feedback">
+              CPF é obrigatório
+            </div>
+          </div>
+          <div class="form-group">
+            <input placeholder="Email" type="text" class="form-control" formControlName="username" maxlength="80"
+              aria-describedby="emailHelp" [ngClass]="{'is-invalid': fieldValidator('username')}">
+            <div class="invalid-feedback">
+              E-mail inválido
+            </div>
+          </div>
+          <div class="form-group">
+            <input placeholder="Senha" type="password" class="form-control" formControlName="password" maxlength="30"
+              [ngClass]="{'is-invalid': fieldValidator('password')}">
+            <div class="invalid-feedback">
+              A senha é obrigatória
+            </div>
+          </div>
+          <div class="form-group">
+            <input placeholder="Nome" type="text" class="form-control" formControlName="name" maxlength="80"
+              [ngClass]="{'is-invalid': fieldValidator('name')}">
+            <div class="invalid-feedback">
+              O nome é obrigatório
+            </div>
+          </div>
+          <div class="form-group">
+            <input placeholder="Endereço" type="text" class="form-control" formControlName="address"
+              [ngClass]="{'is-invalid': fieldValidator('address')}">
+            <div class="invalid-feedback">
+              O endereço é obrigatório
+            </div>
+          </div>
+          <div class="form-group">
+            <input placeholder="Telefone" type="text" class="form-control" formControlName="phone" maxlength="11"
+              [ngClass]="{'is-invalid': fieldValidator('phone')}">
+            <div class="invalid-feedback">
+              O telefone é obrigatório
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <p class="link" routerLink="/login" routerLinkActive="router-link-active">Já é cadastrado? Entrar</p>
+      </div>
+    </form>
+  </div>
+</div>
