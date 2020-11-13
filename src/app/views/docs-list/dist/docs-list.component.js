@@ -10,11 +10,18 @@ exports.DocsListComponent = void 0;
 var environment_1 = require("src/environments/environment");
 var core_1 = require("@angular/core");
 var DocsListComponent = /** @class */ (function () {
-    function DocsListComponent(router, docsListService) {
+    function DocsListComponent(router, formBuilder, docsListService) {
         this.router = router;
+        this.formBuilder = formBuilder;
         this.docsListService = docsListService;
         this.tableData = [];
+        this.backUpData = [];
         this.doctor = null;
+        this.searchForm = null;
+        this.searchForm = this.formBuilder.group({
+            name: [null],
+            specialty: [null]
+        });
     }
     DocsListComponent.prototype.ngOnInit = function () {
         if (!environment_1.environment.isLogged) {
@@ -26,12 +33,45 @@ var DocsListComponent = /** @class */ (function () {
         var _this = this;
         this.docsListService.getDocsList().subscribe(function (res) {
             _this.tableData = res;
+            _this.backUpData = res;
         });
     };
     DocsListComponent.prototype.setDoc = function (doc) {
         console.log(doc);
         this.doctor = doc;
         this.modalLauncher.nativeElement.click();
+    };
+    DocsListComponent.prototype.search = function () {
+        var _this = this;
+        this.tableData = [];
+        this.backUpData.forEach(function (e) {
+            var _a, _b;
+            var name = (_a = _this.searchForm.get('name').value) === null || _a === void 0 ? void 0 : _a.toLowerCase();
+            var specialty = (_b = _this.searchForm.get('specialty').value) === null || _b === void 0 ? void 0 : _b.toLowerCase();
+            if (name && specialty) {
+                if (e.name.toLowerCase().includes(name) && e.specialty.toLowerCase().includes(specialty)) {
+                    _this.tableData.push(e);
+                }
+            }
+            else if (name) {
+                if (e.name.toLowerCase().includes(name)) {
+                    _this.tableData.push(e);
+                }
+            }
+            else if (specialty) {
+                if (e.name.toLowerCase().includes(specialty)) {
+                    _this.tableData.push(e);
+                }
+            }
+        });
+    };
+    DocsListComponent.prototype.clearSearch = function () {
+        var _this = this;
+        this.searchForm.reset();
+        this.tableData = [];
+        this.backUpData.forEach(function (e) {
+            _this.tableData.push(e);
+        });
     };
     __decorate([
         core_1.ViewChild('successModalLauncher')

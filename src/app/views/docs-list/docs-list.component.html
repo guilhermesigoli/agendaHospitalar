@@ -1,5 +1,24 @@
 <div class="wrapper p-4">
     <div class="card">
+      <h3 class="mb-0">Médicos</h3>
+      <form class="mt-4 mb-4" [formGroup]="searchForm" (ngSubmit)="search()">
+        <div class="row">
+          <div class="col-lg-4">
+            <label>Nome</label>
+            <input type="text" class="form-control" formControlName="name"/>
+          </div>
+          <div class="col-lg-4">
+            <label>Especialidade</label>
+            <input type="text" class="form-control" formControlName="specialty"/>
+          </div>
+          <div class="col-lg-2 pt-2">
+            <button class="mt-4 btn-submit" type="submit">Buscar</button>
+          </div>
+          <div class="col-lg-1 pt-2">
+            <button class="mt-4 btn-warning" (click)="clearSearch()">x</button>
+          </div>
+        </div>
+      </form>
         <table class="table table-striped">
         <thead>
           <tr>
@@ -20,7 +39,7 @@
 </div>
 
 
-<button #successModalLauncher id="successModalLauncher" type="button" data-toggle="modal" data-target="#successModal" data-backdrop="static" data-keyboard="false"></button>
+<button #successModalLauncher id="successModalLauncher" type="button" hidden data-toggle="modal" data-target="#successModal" data-backdrop="static" data-keyboard="false"></button>
 <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
