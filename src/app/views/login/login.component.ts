@@ -46,7 +46,8 @@ export class LoginComponent implements OnInit {
           this.showError = true;
         }
         this.isLoggedIn.emit();
-        this.router.navigate(['/']);
+        environment.isLogged = true;
+        this.router.navigate(['/docs']);
       }).add(() => {
         this.isLoading = false;
       });

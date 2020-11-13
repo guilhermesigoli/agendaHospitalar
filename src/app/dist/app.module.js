@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.AppModule = void 0;
+var docs_list_service_1 = require("./views/docs-list/docs-list.service");
 var http_1 = require("@angular/common/http");
 var login_component_1 = require("./views/login/login.component");
 var login_service_1 = require("./views/login/login.service");
@@ -17,6 +18,8 @@ var core_1 = require("@angular/core");
 var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
 var register_service_1 = require("./views/register/register.service");
+var docs_list_component_1 = require("./views/docs-list/docs-list.component");
+var common_1 = require("@angular/common");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -25,16 +28,18 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 app_component_1.AppComponent,
                 register_component_1.RegisterComponent,
-                login_component_1.LoginComponent
+                login_component_1.LoginComponent,
+                docs_list_component_1.DocsListComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
                 app_routing_module_1.AppRoutingModule,
                 forms_1.FormsModule,
                 forms_1.ReactiveFormsModule,
-                http_1.HttpClientModule
+                http_1.HttpClientModule,
+                common_1.CommonModule
             ],
-            providers: [register_service_1.RegisterService, login_service_1.LoginService],
+            providers: [register_service_1.RegisterService, login_service_1.LoginService, docs_list_service_1.DocsListService],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

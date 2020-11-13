@@ -1,3 +1,4 @@
+import { DocsListComponent } from './views/docs-list/docs-list.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'docs',
+    component: DocsListComponent
   },
   {
     path: '',
