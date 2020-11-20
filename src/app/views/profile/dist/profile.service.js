@@ -17,29 +17,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.RegisterService = void 0;
-var environment_1 = require("src/environments/environment");
+exports.ProfileService = void 0;
 var core_1 = require("@angular/core");
-var RegisterService = /** @class */ (function () {
-    function RegisterService(http) {
+var environment_1 = require("src/environments/environment");
+var ProfileService = /** @class */ (function () {
+    function ProfileService(http) {
         this.http = http;
         this.baseUrl = environment_1.environment.baseUrl;
     }
-    RegisterService.prototype.find = function (cpf) {
-        return this.http.get(this.baseUrl + "/users", {
-            params: {
-                cpf: cpf
-            }
-        });
+    ProfileService.prototype["delete"] = function (id) {
+        return this.http["delete"](this.baseUrl + "/users/" + id);
     };
-    RegisterService.prototype.register = function (user) {
+    ProfileService.prototype.update = function (user) {
         return this.http.post(this.baseUrl + "/users", __assign({}, user));
     };
-    RegisterService = __decorate([
+    ProfileService = __decorate([
         core_1.Injectable({
             providedIn: 'root'
         })
-    ], RegisterService);
-    return RegisterService;
+    ], ProfileService);
+    return ProfileService;
 }());
-exports.RegisterService = RegisterService;
+exports.ProfileService = ProfileService;

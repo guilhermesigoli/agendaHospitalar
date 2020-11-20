@@ -1,71 +1,95 @@
 .modal-content {
-    width: 515px;
-    height: 320px;
+  width: 515px;
+  height: 320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  padding: 24px;
+
+  .title {
+    font-size: 18px;
+    margin: 16px;
+    text-align: center;
+    color: #424242;
+    margin-bottom: 0px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    text-align: center;
+    color: #666666;
+  }
+
+  .description {
+    font-size: 14px;
+    text-align: center;
+    color: #888888;
+    margin-bottom: 16px;
+  }
+
+  .amount {
+    width: 259px;
+    height: 48px;
+    margin: 20px 0 24px;
+    padding: 10px 86px;
+    border-radius: 6px;
+    background-color: #f7f7f7;
+    font-family: Rubik;
+    font-size: 24px;
+    color: #0b0b0b;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
-    background-color: #ffffff;
-    padding: 24px;
-
-    .title {
-        font-size: 18px;
-        margin: 16px;
-        text-align: center;
-        color: #424242;
-        margin-bottom: 0px;
-    }
-
-    .subtitle{
-        font-size: 14px;
-        text-align: center;
-        color: #666666;
-    }
-
-    .description {
-        font-size: 14px;
-        text-align: center;
-        color: #888888;
-        margin-bottom: 16px;
-    }
-
-    .amount {
-        width: 259px;
-        height: 48px;
-        margin: 20px 0 24px;
-        padding: 10px 86px;
-        border-radius: 6px;
-        background-color: #f7f7f7;
-        font-family: Rubik;
-        font-size: 24px;
-        color: #0b0b0b;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  }
 }
 
 td {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 input {
-    width: 100%;
-    height: 40px;
-    border-radius: 3px;
-    border: 1px solid #a2a2a2;
-    padding: 5px 10px;
-    color: gray;
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px solid #a2a2a2;
+  padding: 5px 10px;
+  color: gray;
 }
 
 
 .btn-warning {
-    height: 40px;
-    border-radius: 6px;
-    border-color: transparent;
-    font-size: 16px;
-    font-weight: 500;
-    text-align: center;
-    color: #ffffff;
+  height: 40px;
+  border-radius: 6px;
+  border-color: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px;
+
+  div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+
+    i {
+      font-size: 40px;
+      margin-right: 10px;
+    }
+
+    color: gray;
+    font-size: 14px;
+  }
+
+
 }

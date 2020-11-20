@@ -1,3 +1,4 @@
+import { ProfileService } from './views/profile/profile.service';
 import { DocsListService } from './views/docs-list/docs-list.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './views/login/login.component';
@@ -12,13 +13,15 @@ import { AppComponent } from './app.component';
 import { RegisterService } from './views/register/register.service';
 import { DocsListComponent } from './views/docs-list/docs-list.component';
 import { CommonModule } from '@angular/common';
+import { ProfileComponent } from './views/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    DocsListComponent
+    DocsListComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     CommonModule
   ],
-  providers: [RegisterService, LoginService, DocsListService],
+  providers: [RegisterService, LoginService, DocsListService, ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

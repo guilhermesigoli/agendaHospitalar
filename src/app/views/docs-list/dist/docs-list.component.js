@@ -25,8 +25,9 @@ var DocsListComponent = /** @class */ (function () {
     }
     DocsListComponent.prototype.ngOnInit = function () {
         if (!environment_1.environment.isLogged) {
-            this.router.navigate(['/docs']);
+            this.router.navigate(['/login']);
         }
+        this.username = JSON.parse(sessionStorage.getItem('user'))[0].name;
         this.getDocsList();
     };
     DocsListComponent.prototype.getDocsList = function () {
@@ -67,11 +68,11 @@ var DocsListComponent = /** @class */ (function () {
     };
     DocsListComponent.prototype.clearSearch = function () {
         var _this = this;
-        this.searchForm.reset();
         this.tableData = [];
         this.backUpData.forEach(function (e) {
             _this.tableData.push(e);
         });
+        this.searchForm.reset();
     };
     __decorate([
         core_1.ViewChild('successModalLauncher')

@@ -13,15 +13,6 @@ export class RegisterService {
     private http: HttpClient,
   ) { }
 
-  // login(user) {
-  //   return this.http.get(`${this.baseUrl}/users`, {
-  //     params: {
-  //       username: user.username,
-  //       password: user.password
-  //     }
-  //   })
-  // }
-
   find(cpf) {
     return this.http.get(`${this.baseUrl}/users`, {
       params: {

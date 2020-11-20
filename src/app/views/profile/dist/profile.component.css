@@ -1,0 +1,16 @@
+.centerButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.centerButton p {
+  margin: 0px;
+  color: #e25757;
+  cursor: pointer;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

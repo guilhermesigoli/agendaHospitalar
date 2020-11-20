@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.AppModule = void 0;
+var profile_service_1 = require("./views/profile/profile.service");
 var docs_list_service_1 = require("./views/docs-list/docs-list.service");
 var http_1 = require("@angular/common/http");
 var login_component_1 = require("./views/login/login.component");
@@ -20,6 +21,7 @@ var app_component_1 = require("./app.component");
 var register_service_1 = require("./views/register/register.service");
 var docs_list_component_1 = require("./views/docs-list/docs-list.component");
 var common_1 = require("@angular/common");
+var profile_component_1 = require("./views/profile/profile.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -29,7 +31,8 @@ var AppModule = /** @class */ (function () {
                 app_component_1.AppComponent,
                 register_component_1.RegisterComponent,
                 login_component_1.LoginComponent,
-                docs_list_component_1.DocsListComponent
+                docs_list_component_1.DocsListComponent,
+                profile_component_1.ProfileComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
@@ -39,7 +42,7 @@ var AppModule = /** @class */ (function () {
                 http_1.HttpClientModule,
                 common_1.CommonModule
             ],
-            providers: [register_service_1.RegisterService, login_service_1.LoginService, docs_list_service_1.DocsListService],
+            providers: [register_service_1.RegisterService, login_service_1.LoginService, docs_list_service_1.DocsListService, profile_service_1.ProfileService],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

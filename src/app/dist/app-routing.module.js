@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.AppRoutingModule = void 0;
+var profile_component_1 = require("./views/profile/profile.component");
 var docs_list_component_1 = require("./views/docs-list/docs-list.component");
 var login_component_1 = require("./views/login/login.component");
 var register_component_1 = require("./views/register/register.component");
@@ -24,6 +25,10 @@ var routes = [
     {
         path: 'docs',
         component: docs_list_component_1.DocsListComponent
+    },
+    {
+        path: 'profile',
+        component: profile_component_1.ProfileComponent
     },
     {
         path: '',

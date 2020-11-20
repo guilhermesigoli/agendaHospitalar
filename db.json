@@ -1,15 +1,5 @@
 {
-  "users": [
-    {
-      "username": "admin@baplays.com",
-      "password": "teste123",
-      "name": "837487",
-      "cpf": "38478743",
-      "address": "84y384y",
-      "phone": "38y74834",
-      "id": 1
-    }
-  ], 
+  "users": [],
   "doctors": [
     {
       "id": 1,
