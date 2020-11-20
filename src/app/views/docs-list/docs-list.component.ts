@@ -16,6 +16,7 @@ export class DocsListComponent implements OnInit {
   backUpData = [];
   doctor = null;
   searchForm: FormGroup = null;
+  username: string;
 
   constructor(
     private readonly router: Router,
@@ -30,8 +31,9 @@ export class DocsListComponent implements OnInit {
 
   ngOnInit(): void {
     if (!environment.isLogged) {
-      this.router.navigate(['/docs']);
+      this.router.navigate(['/login']);
     }
+    this.username = JSON.parse(sessionStorage.getItem('user'))[0].name;
 
     this.getDocsList()
   }
@@ -75,11 +77,12 @@ export class DocsListComponent implements OnInit {
   }
 
   clearSearch() {
-    this.searchForm.reset();
     this.tableData = [];
     this.backUpData.forEach(e => {
       this.tableData.push(e)
     })
+
+    this.searchForm.reset();
   }
 
 }

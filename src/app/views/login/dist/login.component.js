@@ -38,9 +38,12 @@ var LoginComponent = /** @class */ (function () {
             if (response.length === 0) {
                 _this.showError = true;
             }
-            _this.isLoggedIn.emit();
-            environment_1.environment.isLogged = true;
-            _this.router.navigate(['/docs']);
+            else {
+                sessionStorage.setItem('user', JSON.stringify(response));
+                _this.isLoggedIn.emit();
+                environment_1.environment.isLogged = true;
+                _this.router.navigate(['/docs']);
+            }
         }).add(function () {
             _this.isLoading = false;
         });

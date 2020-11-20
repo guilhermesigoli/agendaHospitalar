@@ -44,10 +44,12 @@ export class LoginComponent implements OnInit {
       (response: []) => {
         if(response.length === 0){
           this.showError = true;
+        } else {
+          sessionStorage.setItem('user', JSON.stringify(response));
+          this.isLoggedIn.emit();
+          environment.isLogged = true;
+          this.router.navigate(['/docs']);
         }
-        this.isLoggedIn.emit();
-        environment.isLogged = true;
-        this.router.navigate(['/docs']);
       }).add(() => {
         this.isLoading = false;
       });

@@ -1,3 +1,4 @@
+import { ProfileComponent } from './views/profile/profile.component';
 import { DocsListComponent } from './views/docs-list/docs-list.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'docs',
     component: DocsListComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   },
   {
     path: '',

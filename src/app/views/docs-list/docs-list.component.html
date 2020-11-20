@@ -1,7 +1,13 @@
 <div class="wrapper p-4">
+  <div class="menu">
+    <div routerLink="/profile">
+      <i class="fas fa-user-circle"></i>
+      {{username}}
+    </div>
+  </div>
     <div class="card">
       <h3 class="mb-0">Médicos</h3>
-      <form class="mt-4 mb-4" [formGroup]="searchForm" (ngSubmit)="search()">
+      <form class="mt-4 mb-4" [formGroup]="searchForm">
         <div class="row">
           <div class="col-lg-4">
             <label>Nome</label>
@@ -12,7 +18,7 @@
             <input type="text" class="form-control" formControlName="specialty"/>
           </div>
           <div class="col-lg-2 pt-2">
-            <button class="mt-4 btn-submit" type="submit">Buscar</button>
+            <button class="mt-4 btn-submit" (click)="search()">Buscar</button>
           </div>
           <div class="col-lg-1 pt-2">
             <button class="mt-4 btn-warning" (click)="clearSearch()">x</button>

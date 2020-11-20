@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   appName: 'My Doc',
   baseUrl: ' http://localhost:3000',
-  isLogged: false
+  isLogged: false,
 };
 
 /*
